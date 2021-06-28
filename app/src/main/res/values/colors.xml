@@ -11,4 +11,6 @@
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#151515</color>
     <color name="colorAccent">#FF7043</color>
+    <color name="barColor">#E4E4E4</color>
+
 </resources>

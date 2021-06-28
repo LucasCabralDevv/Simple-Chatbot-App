@@ -9,7 +9,7 @@
         <item name="android:statusBarColor">#fff</item>
         <item name="android:windowLightStatusBar">true</item>
 
-        <item name="android:navigationBarColor">#E4E4E4</item>
+        <item name="android:navigationBarColor">@color/barColor</item>
         <item name="android:windowLightNavigationBar">true</item>
 
         <item name="actionBarStyle">@style/MyActionBar</item>

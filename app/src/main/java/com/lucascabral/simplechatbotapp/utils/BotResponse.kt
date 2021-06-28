@@ -62,7 +62,7 @@ object BotResponse {
             else -> {
                 when (random) {
                     0 -> "I don't understand =("
-                    1 -> "Idk"
+                    1 -> "Try asking me again!"
                     2 -> "Try asking me something different!"
                     else -> "error"
                 }
