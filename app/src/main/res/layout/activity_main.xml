@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_chat"
     tools:context=".ui.view.MainActivity">
 
     <LinearLayout
@@ -51,7 +52,7 @@
     <View
         android:id="@+id/dark_divider"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="8dp"
         android:background="@color/barColor" />
 
 </RelativeLayout>

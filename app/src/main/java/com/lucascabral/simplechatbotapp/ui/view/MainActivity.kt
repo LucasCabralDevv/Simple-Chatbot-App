@@ -15,6 +15,7 @@ import com.lucascabral.simplechatbotapp.utils.Constants.RECEIVE_ID
 import com.lucascabral.simplechatbotapp.utils.Constants.SEND_ID
 import com.lucascabral.simplechatbotapp.utils.Time
 import kotlinx.coroutines.*
+import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,24 +31,16 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView()
         clickEvents()
-        val random = (0..3).random()
-        customBotMessage("Hello! Today you're speaking with ${botList[random]}, how may I help?")
+        val randomName = (0..3).random()
+        customBotMessage("Olá! eu me chamo Cygnus, em que posso ajudar?")
     }
 
-    private fun clickEvents() {
-
-        binding.sendButton.setOnClickListener {
-            sendMessage()
-        }
-
-        binding.messageEditText.setOnClickListener {
-            GlobalScope.launch {
-                delay(1000)
-
-                withContext(Dispatchers.Main) {
-                    binding.messagesRecyclerView.scrollToPosition(adapter.itemCount - 1)
-
-                }
+    override fun onStart() {
+        super.onStart()
+        GlobalScope.launch {
+            delay(100)
+            withContext(Dispatchers.Main) {
+                binding.messagesRecyclerView.scrollToPosition(adapter.itemCount - 1)
             }
         }
     }
@@ -58,12 +51,17 @@ class MainActivity : AppCompatActivity() {
         binding.messagesRecyclerView.layoutManager = LinearLayoutManager(applicationContext)
     }
 
-    override fun onStart() {
-        super.onStart()
-        GlobalScope.launch {
-            delay(100)
-            withContext(Dispatchers.Main) {
-                binding.messagesRecyclerView.scrollToPosition(adapter.itemCount - 1)
+    private fun clickEvents() {
+        binding.sendButton.setOnClickListener {
+            sendMessage()
+        }
+
+        binding.messageEditText.setOnClickListener {
+            GlobalScope.launch {
+                delay(1000)
+                withContext(Dispatchers.Main) {
+                    binding.messagesRecyclerView.scrollToPosition(adapter.itemCount - 1)
+                }
             }
         }
     }
@@ -101,7 +99,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     OPEN_SEARCH -> {
                         val site = Intent(Intent.ACTION_VIEW)
-                        val searchTerm: String? = message.substringAfterLast("search")
+                        val searchTerm: String? = message.substringAfterLast("pesquise sobre")
                         site.data = Uri.parse("https://www.google.com/search?&q=$searchTerm")
                         startActivity(site)
                     }
