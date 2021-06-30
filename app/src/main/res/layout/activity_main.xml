@@ -33,10 +33,11 @@
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="@drawable/send_message_shape_box"
+            android:background="@drawable/round_button"
             android:backgroundTint="@color/teal_700"
-            android:text="@string/main_text_button"
-            android:textColor="@android:color/white" />
+            android:drawableStart="@drawable/ic_send_white"
+            android:paddingStart="46dp"
+            android:paddingEnd="50dp" />
 
     </LinearLayout>
 

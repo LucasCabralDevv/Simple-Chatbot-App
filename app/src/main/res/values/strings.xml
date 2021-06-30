@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">Simple Chatbot App</string>
-    <string name="main_text_button">Send</string>
     <string name="main_text_hint">Type a message…</string>
 </resources>
