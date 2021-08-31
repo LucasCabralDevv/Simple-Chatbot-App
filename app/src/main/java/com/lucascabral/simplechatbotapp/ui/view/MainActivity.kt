@@ -9,7 +9,9 @@ import com.lucascabral.simplechatbotapp.data.Message
 import com.lucascabral.simplechatbotapp.databinding.ActivityMainBinding
 import com.lucascabral.simplechatbotapp.ui.adapter.MessageAdapter
 import com.lucascabral.simplechatbotapp.utils.BotResponse
+import com.lucascabral.simplechatbotapp.utils.Constants.OPEN_FACEBOOK
 import com.lucascabral.simplechatbotapp.utils.Constants.OPEN_GOOGLE
+import com.lucascabral.simplechatbotapp.utils.Constants.OPEN_INSTAGRAM
 import com.lucascabral.simplechatbotapp.utils.Constants.OPEN_SEARCH
 import com.lucascabral.simplechatbotapp.utils.Constants.RECEIVE_ID
 import com.lucascabral.simplechatbotapp.utils.Constants.SEND_ID
@@ -95,6 +97,16 @@ class MainActivity : AppCompatActivity() {
                     OPEN_GOOGLE -> {
                         val site = Intent(Intent.ACTION_VIEW)
                         site.data = Uri.parse("https://www.google.com/")
+                        startActivity(site)
+                    }
+                    OPEN_FACEBOOK -> {
+                        val site = Intent(Intent.ACTION_VIEW)
+                        site.data = Uri.parse("https://www.facebook.com/")
+                        startActivity(site)
+                    }
+                    OPEN_INSTAGRAM -> {
+                        val site = Intent(Intent.ACTION_VIEW)
+                        site.data = Uri.parse("https://www.instagram.com/")
                         startActivity(site)
                     }
                     OPEN_SEARCH -> {

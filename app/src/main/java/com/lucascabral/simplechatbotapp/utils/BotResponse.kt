@@ -1,6 +1,8 @@
 package com.lucascabral.simplechatbotapp.utils
 
+import com.lucascabral.simplechatbotapp.utils.Constants.OPEN_FACEBOOK
 import com.lucascabral.simplechatbotapp.utils.Constants.OPEN_GOOGLE
+import com.lucascabral.simplechatbotapp.utils.Constants.OPEN_INSTAGRAM
 import com.lucascabral.simplechatbotapp.utils.Constants.OPEN_SEARCH
 import java.lang.Exception
 import java.sql.Date
@@ -83,10 +85,19 @@ object BotResponse {
                 date.toString()
             }
 
-            message.contains("abrir") || message.contains("abra")
-                    || message.contains("va para") || message.contains("vá para")
-                    && message.contains("google") -> {
+            message.contains("abra o") && message.contains("google")
+                    || message.contains("vá para") && message.contains("google") -> {
                 OPEN_GOOGLE
+            }
+
+            message.contains("abra o") && message.contains("facebook")
+                    || message.contains("vá para") && message.contains("facebook") -> {
+                OPEN_FACEBOOK
+            }
+
+            message.contains("abra o") && message.contains("instagram")
+                    || message.contains("vá para") && message.contains("instagram") -> {
+                OPEN_INSTAGRAM
             }
 
             message.contains("pesquise") || message.contains("pesquisar") -> {
